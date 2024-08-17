@@ -1,0 +1,377 @@
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --PaleOrange: hsl(25, 100%, 94%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --darkblue: hsl(220, 13%, 13%);
+  --DarkGrayishBlue: hsl(219, 9%, 45%);
+  --GrayishBlue: hsl(220, 14%, 75%);
+  --LightGrayishBlue: hsl(223, 64%, 98%);
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  padding: 0px 150px;
+  height: 100%;
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.nav {
+  border-bottom: solid 1px var(--LightGrayishBlue);
+  display: flex;
+  justify-content: space-between;
+
+  height: 100%;
+}
+.left img {
+  width: 150px;
+}
+.cart {
+  width: 25px;
+}
+.avatar {
+  width: 60px;
+}
+.left,
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+}
+ul {
+  display: flex;
+  gap: 30px;
+}
+li {
+  padding: 50px 0px;
+  border-bottom: 3px solid transparent;
+}
+li:hover {
+  border-bottom: solid 3px var(--Orange);
+  border-radius: 2px;
+}
+ul li a {
+  font-weight: 400;
+  color: var(--DarkGrayishBlue);
+}
+.avatar:hover {
+  outline: solid 2px var(--Orange);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.cart:hover {
+  filter: grayscale(100%) brightness(0%);
+  cursor: pointer;
+}
+ul li a:hover {
+  color: black;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  padding: 110px;
+}
+.product .images {
+  display: flex;
+  flex-direction: column;
+}
+.images img {
+  border-radius: 10px;
+}
+.product .main-img {
+  width: 500px;
+}
+.product .mini {
+  display: flex;
+  padding: 25px 0;
+  justify-content: space-between;
+}
+.product .mini img {
+  width: 100px;
+}
+.product img:hover {
+  cursor: pointer;
+}
+
+.img-js:hover {
+  filter: opacity(30%);
+}
+.clicked {
+  filter: opacity(20%);
+  z-index: 1;
+  position: relative;
+}
+.clicked::before {
+  content: "";
+  border: 2px solid var(--Orange);
+  background-color: rgba(
+    255,
+    165,
+    0,
+    0.2
+  ); /* Adds a semi-transparent orange background */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.details {
+  padding: 70px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+h3 {
+  color: var(--DarkGrayishBlue);
+  font-size: 17px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 45px;
+}
+p {
+  color: var(--DarkGrayishBlue);
+  line-height: 27px;
+  font-weight: 400;
+}
+.discount {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.discount .new {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+.discount .qty {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.old {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+  font-size: 15px;
+  font-weight: 700;
+}
+.add {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: max-content;
+}
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 10px;
+  width: 150px;
+  background-color: var(--LightGrayishBlue);
+  border-radius: 10px;
+  font-weight: 700;
+}
+.number img:hover {
+  cursor: pointer;
+}
+.addCart {
+  display: flex;
+  padding: 10px 50px;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Orange);
+  border-radius: 10px;
+}
+.addCart:hover {
+  cursor: pointer;
+}
+.addCart img {
+  filter: grayscale(100%) brightness(0%);
+}
+.addCart p {
+  color: black;
+  font-weight: 700;
+  font-size: small;
+}
+.cart-container {
+  display: inline-block;
+  position: relative;
+}
+.cart-items {
+  position: absolute;
+  top: 75px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  right: 0;
+
+  border-radius: 10px;
+  width: 350px;
+
+  background-color: #fff;
+}
+.cart-items h3 {
+  color: black;
+  border-bottom: solid 1px var(--LightGrayishBlue);
+  padding: 20px;
+  font-size: 17px;
+}
+.cart-items .items {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cart-items span {
+  color: var(--DarkGrayishBlue);
+  font-weight: 600;
+  font-size: 15px;
+}
+.item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.item .sneaker-img {
+  width: 60px;
+  border-radius: 7px;
+}
+.items button {
+  background-color: var(--Orange);
+  color: black;
+  padding: 20px;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  width: calc(350px - 40px);
+  margin-top: 15px;
+  cursor: pointer;
+}
+.item .info p {
+  color: var(--DarkGrayishBlue);
+}
+.item .info span:not(:last-child) {
+  font-weight: 400;
+  margin-right: 2px;
+}
+.counter {
+  position: absolute;
+  bottom: 18px;
+  left: 12px;
+  font-weight: 700;
+  color: white;
+  background-color: var(--Orange);
+  padding: 0px 7px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cart-clicked {
+  display: none;
+}
+
+.container .before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.opacity {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.opacity .close {
+  width: 20px;
+  margin-left: auto;
+  cursor: pointer;
+  filter: brightness(10);
+}
+.opacity .full {
+  display: flex;
+
+  align-items: center;
+  position: relative;
+}
+.full .arrows {
+  width: 100%;
+  z-index: 50;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.next,
+.prev {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+}
+.next {
+  left: 97%;
+}
+.prev {
+  right: 97%;
+}
+.next:hover,
+.prev:hover {
+  background-color: var(--Orange);
+}
+.minis {
+  display: flex;
+  padding: 25px 0;
+  justify-content: space-between;
+  gap: 20px;
+}
+.minis img {
+  width: 80px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.big {
+  width: 650px;
+  border-radius: 14px;
+}
